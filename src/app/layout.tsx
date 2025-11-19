@@ -8,7 +8,7 @@ import Link from 'next/link'
 import './global.css'
 
 const meta = {
-  title: 'JD One - Website',
+  title: 'JD ONE - Website',
   description:
     'Sleep deprived father. FE Engineer in China. Lover of Ramen and Kpop',
   image: `${WEBSITE_HOST_URL}/og-preview.jpg`,
@@ -17,7 +17,7 @@ const meta = {
 export const metadata: Metadata = {
   title: {
     default: meta.title,
-    template: '%s | JD One',
+    template: '%s | JD ONE',
   },
   description: meta.description,
   openGraph: {
@@ -69,7 +69,7 @@ export default function RootLayout({
               <p>
                 Built by{' '}
                 <Link className="link" href="https://twitter.com/hunterhchang">
-                  JD One
+                  JD ONE
                 </Link>
               </p>
             </Container>
