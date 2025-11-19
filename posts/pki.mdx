@@ -76,6 +76,15 @@ CA 自己也有身份證，是更高級的「根 CA」簽的。
 下次看到小鎖頭 🔒，記得心裡比個讚：  
 **「謝謝 PKI 大人，又默默救我一命～」**
 
+{/* 如果你之後想加配圖，直接在這邊使用你的 Image 組件 */}
+{/* <Image
+  src="/images/pki-lock.webp"
+  alt="瀏覽器小綠鎖頭與 PKI 運作示意圖"
+  width={800}
+  height={450}
+  priority
+/> */}
+
 ## 實戰小故事：我幫 jdone-blog.com 申請 SSL 證書，背後到底發生了幾步？
 
 假設你現在就是 jdone-blog.com 的站長，想讓瀏覽器出現小綠鎖頭🔒，整個過程其實就 6 步：
@@ -109,11 +118,3 @@ sudo certbot --nginx -d jdone-blog.com -d www.jdone-blog.com
 # 或者用純 DNS 驗證（雲端主機推薦）
 sudo certbot certonly --manual --preferred-challenges dns -d jdone-blog.com
 
-{/* 如果你之後想加配圖，直接在這邊使用你的 Image 組件 */}
-{/* <Image
-  src="/images/pki-lock.webp"
-  alt="瀏覽器小綠鎖頭與 PKI 運作示意圖"
-  width={800}
-  height={450}
-  priority
-/> */}
