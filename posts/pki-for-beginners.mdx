@@ -1,40 +1,23 @@
 ---
-title: "Hello MDX"
-date: "2025-01-01"
-tags: ["mdx", "test", "blog"]
-summary: "This is a test MDX file for your Next.js blog."
+title: Test MDX
+description: A fully compatible MDX test file.
+date: 2025-11-19
 ---
 
-# 這是一篇 MDX 測試文章
+This is a simple MDX test post.  
+You can use this file to verify that your blog system works correctly.
 
-這是 **Markdown** 內容，可以正常顯示。
-
-你也可以使用 *italic*、**bold**、`inline code` 等等。
-
----
-
-## 📌 清單測試
-
-- 支援普通列表
-- 支援 **粗體**
-- 支援 *斜體*
-
-1. 也支援有序列表
-2. 第二項
+Here is a link to another post: [Example Post](/posts/example-post).
 
 ---
 
-## 📦 引用測試
-
-> 這是一段引用文字，用來測試 MDX 渲染效果。
-
----
-
-## 🧩 JSX 组件測試
-
-MDX 最強的地方是可以直接放 JSX：
+## Image Component Test
 
 ```jsx
-<div style={{ padding: "12px", background: "#f2f2f2", borderRadius: "8px" }}>
-  <p>這是直接在 MDX 裡使用 JSX！</p>
-</div>
+<Image
+  alt="Test Image"
+  src="/images/test.jpg"
+  width={800}
+  height={500}
+  priority
+/>
