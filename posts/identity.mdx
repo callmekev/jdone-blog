@@ -1,0 +1,119 @@
+---
+title: "SAML、OAuth、OIDC 到底誰管登入？誰管授權？一次搞懂"
+description: "用最白話比喻 + 超清楚表格，一次搞懂 SAML、OAuth2、OIDC 差別，看完比 95% 工程師更懂！"
+date: "2025-11-21"
+lastMod: "2025-11-21"
+tags:
+  - SSO
+  - SAML
+  - OAuth2
+  - OpenID Connect
+  - 網路安全
+  - 身分驗證
+  - 小白科普
+---
+
+## 你用過這些嗎？
+1. **公司電腦一開就自動登入所有系統 → SAML**  
+2. **用 Google 登入別人家網站 → OIDC**  
+3. **讓 App 讀你的 Google 雲端硬碟 → OAuth2**  
+
+三個名字天天聽，但大多數人搞不清楚差別。這篇用最白話的方式，一次搞懂。
+
+---
+
+## 🦅 上帝視角：三個問題搞定身份世界
+
+1. **你是誰？（Authentication 認證）**  
+2. **你能做什麼？（Authorization 授權）**  
+3. **三個協議各自角色**  
+
+一句話記住：
+
+- **SAML** → 企業 SSO  
+- **OAuth2** → 授權（App 可以做什麼）  
+- **OIDC** → OAuth2 的「登入版本」（身份驗證）
+
+---
+
+## 🧠 SAML：公司員工證
+
+> **定位：企業 SSO** | **格式：XML** | **場景：登入公司內部系統**  
+
+比喻：進公司時，保安給你 **員工證（SAML Assertion）**，拿著它就能通行所有內部系統（HR、ERP、財務、郵件）。  
+
+**核心概念：交換身份資訊 → 你是誰？**
+
+---
+
+## 🧩 OAuth2：授權書
+
+> **定位：授權，不是登入** | **格式：Token** | **場景：讓第三方 App 做你允許的事**  
+
+比喻：你給某 App 一張「有限授權書」，它能存取 Google Drive，但不能登入你的帳號。  
+
+常見場景：
+
+- Instagram 授權第三方排程  
+- Google Drive 授權備份工具  
+- GitHub 授權 CI/CD  
+
+**重點：OAuth2 做授權（Authorization），不做身份驗證。**
+
+---
+
+## 🎭 OIDC：OAuth2 的登入升級版
+
+> **定位：身份驗證 + OAuth2** | **格式：JWT** | **場景：Google / Apple / Microsoft 登入**  
+
+比喻：你用「Google 登入」，Google 說「這個人叫 Alex」，網站依此讓你進入。  
+
+**重點：OIDC = OAuth2 + 身份資訊（ID Token） → 你是誰？**
+
+---
+
+## ⚔️ 三者差異快速對照
+
+| 協議 | 功能 | 場景 | 格式 | 核心概念 | 例子 |
+|------|------|------|------|-----------|-------|
+| **SAML** | 認證 | 企業 SSO | XML | 你是誰？ | 公司登入 ERP、CRM、HR |
+| **OAuth2** | 授權 | 第三方 App / API | Token | 你能做什麼？ | App 授權存 Google Drive |
+| **OIDC** | 認證 + 授權 | App Login | JWT | 你是誰？ | Google / Apple 登入 |
+
+一句話總結：
+
+- SAML = 企業 SSO 老牌方案  
+- OAuth2 = 授權協議，不是登入  
+- OIDC = 現代登入協議，基於 OAuth2
+
+---
+
+## 🔍 用故事理解三者
+
+- **SAML**：公司刷卡 → 拿到員工證 → 全公司系統通行  
+- **OAuth2**：借家裡一間房的鑰匙 → 朋友只能進你允許的房間  
+- **OIDC**：Google 說「這個人叫 Alex」 → 網站允許登入
+
+---
+
+## 🔐 適用技術建議
+
+| 使用場景 | 推薦技術 |
+|---------|-----------|
+| 企業內部系統（SSO） | **SAML** |
+| 手機 App / SPA / Web App | **OIDC** |
+| 第三方 API 授權 | **OAuth2** |
+| Google / Apple Login | **OIDC** |
+
+---
+
+## 🎯 核心重點
+
+1. **OAuth2 ≠ 登入**  
+2. **OIDC = 登入 + 授權**  
+3. **SAML = 老牌企業 SSO**  
+
+搞懂這三者，你就掌握了日常 90% 網路身份世界的核心概念。
+
+{/* 可在這裡插入流程示意圖 */}
+{/* <Image src="/images/sso-diff.png" width={900} height={550} alt="SAML、OAuth2、OIDC 流程差異示意圖" priority /> */}
